@@ -1,0 +1,28 @@
+{
+  "name": "knex-integration-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -r babel-register src/*.test.js",
+    "tdd": "npm t -s -- -w -R min",
+    "db": "babel-node node_modules/.bin/knex --",
+    "db:make": "npm run -s db migrate:make --",
+    "db:up": "npm run -s db migrate:latest",
+    "db:down": "npm run -s db migrate:rollback"
+  },
+  "keywords": [],
+  "author": "Tim Davis",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "6.18.0",
+    "babel-plugin-transform-async-to-generator": "6.16.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "6.18.0",
+    "chai": "3.5.0",
+    "mocha": "3.1.2"
+  },
+  "dependencies": {
+    "knex": "0.12.6",
+    "pg": "6.1.0"
+  }
+}
